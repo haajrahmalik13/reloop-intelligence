@@ -1,18 +1,23 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-  <title>Donate | ReLoop Intelligence</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Submit a Donation | ReLoop Intelligence</title>
+
   <link rel="stylesheet" href="/static/style.css">
   <script src="/static/app.js" defer></script>
 </head>
 
 <body>
+
+  <!-- NAVIGATION -->
   <nav>
     <a class="logo" href="/app">↻ ReLoop</a>
+
     <div class="nav-links">
       <a href="/app">Home</a>
       <a href="/donate" aria-current="page">Donate</a>
@@ -22,64 +27,201 @@
 
   <main class="container donation-layout">
 
-    <!-- LEFT: EXISTING FUNCTIONAL FORM -->
+    <!-- LEFT COLUMN -->
     <div class="donation-main">
 
-      <span class="eyebrow">BUSINESS DONATIONS</span>
+      <span class="eyebrow">
+        BUSINESS DONATIONS · PRELIMINARY REVIEW
+      </span>
 
       <h1>Submit a donation</h1>
 
       <p class="donation-intro">
         Tell us about the devices you'd like to offer.
-        ReLoop helps assess their potential for reuse.
+        Don't worry if you don't know every specification —
+        staff can verify the information later.
       </p>
 
       <form id="donation-form" class="card form">
+
+        <!-- SECTION 1 -->
+        <h2>01. Your Devices</h2>
 
         <label for="company">Company name</label>
         <input
           id="company"
           type="text"
-          placeholder="Example: TechCorp"
+          placeholder="Example: Northstar Technologies (Demo)"
           maxlength="100"
           required
         >
 
-        <label for="device">Device type</label>
-        <select id="device" required>
-          <option value="Laptop">Laptop</option>
-          <option value="Desktop">Desktop</option>
-        </select>
+        <div class="field-pair">
 
-        <label for="quantity">Number of devices</label>
+          <div>
+            <label for="device">Device type</label>
+            <select id="device" required>
+              <option value="Laptop">Laptop</option>
+              <option value="Desktop">Desktop</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="quantity">Quantity</label>
+            <input
+              id="quantity"
+              type="number"
+              min="1"
+              max="10000"
+              step="1"
+              value="20"
+              required
+            >
+          </div>
+
+        </div>
+
+        <label for="model">
+          Manufacturer and model (optional)
+        </label>
+
         <input
-          id="quantity"
-          type="number"
-          min="1"
-          max="10000"
-          value="20"
-          required
+          id="model"
+          type="text"
+          maxlength="120"
+          placeholder="e.g. Dell Latitude 5420"
         >
 
-        <label for="condition">Reported condition</label>
-        <select id="condition" required>
-          <option value="Good">Good — mostly functional</option>
-          <option value="Fair">Fair — some repairs may be needed</option>
-          <option value="Poor">Poor — significant issues</option>
+        <div class="field-pair">
+
+          <div>
+            <label for="age">Approximate age</label>
+            <select id="age">
+              <option value="Unknown">Unknown</option>
+              <option value="Under 3 years">Under 3 years</option>
+              <option value="3-5 years">3–5 years</option>
+              <option value="6-8 years">6–8 years</option>
+              <option value="9+ years">9+ years</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="ram">RAM (if known)</label>
+            <select id="ram">
+              <option value="">Unknown</option>
+              <option value="4">4 GB</option>
+              <option value="8">8 GB</option>
+              <option value="16">16 GB</option>
+              <option value="32">32 GB or more</option>
+            </select>
+          </div>
+
+        </div>
+
+        <label for="storage">Storage type</label>
+
+        <select id="storage">
+          <option value="Unknown">Unknown</option>
+          <option value="SSD">SSD</option>
+          <option value="HDD">HDD</option>
+          <option value="None">No storage drive</option>
         </select>
 
         <label class="check">
-          <input
-            id="uniform"
-            type="checkbox"
-            checked
-          >
-          Devices are the same or similar models
+          <input id="uniform" type="checkbox" checked>
+          Devices are identical or similar models
         </label>
 
-        <label for="pickup">
-          Estimated collection expense (CAD)
+        <!-- SECTION 2 -->
+        <h2>02. Condition & Known Issues</h2>
+
+        <label for="condition">
+          Overall reported condition
         </label>
+
+        <select id="condition">
+          <option value="Good">Good — mostly functional</option>
+          <option value="Fair">Fair — repairs may be needed</option>
+          <option value="Poor">Poor — significant issues</option>
+        </select>
+
+        <label for="power">How many devices power on?</label>
+
+        <select id="power">
+          <option value="Not tested">Not tested</option>
+          <option value="All">All</option>
+          <option value="Most">Most</option>
+          <option value="Some">Some</option>
+          <option value="None">None</option>
+        </select>
+
+        <p class="helper">
+          Enter the approximate number of affected devices.
+          Leave a field blank if unknown, or enter 0 if none.
+        </p>
+
+        <div class="field-pair">
+
+          <div>
+            <label for="screens">Broken screens</label>
+            <input
+              id="screens"
+              type="number"
+              min="0"
+              step="1"
+              placeholder="Unknown"
+            >
+          </div>
+
+          <div>
+            <label for="drives">Missing storage drives</label>
+            <input
+              id="drives"
+              type="number"
+              min="0"
+              step="1"
+              placeholder="Unknown"
+            >
+          </div>
+
+          <div>
+            <label for="batteries">Battery issues</label>
+            <input
+              id="batteries"
+              type="number"
+              min="0"
+              step="1"
+              placeholder="Unknown"
+            >
+          </div>
+
+          <div>
+            <label for="chargers">Missing chargers</label>
+            <input
+              id="chargers"
+              type="number"
+              min="0"
+              step="1"
+              placeholder="Unknown"
+            >
+          </div>
+
+        </div>
+
+        <!-- SECTION 3 -->
+        <h2>03. Collection & Data Security</h2>
+
+        <label for="collection">Donation method</label>
+
+        <select id="collection">
+          <option value="Pickup">Business pickup</option>
+          <option value="Drop-off">Drop-off</option>
+        </select>
+
+        <label for="pickup">
+          Estimated collection expense to organization (CAD)
+        </label>
+
         <input
           id="pickup"
           type="number"
@@ -89,37 +231,50 @@
           required
         >
 
-        <p class="form-helper">
-          This expense is a demo assumption, not an
-          official pickup quote or donor fee.
+        <p class="helper">
+          This is an illustrative operating expense,
+          not an official pickup fee charged to donors.
         </p>
+
+        <label for="data">
+          Are company files or data present?
+        </label>
+
+        <select id="data">
+          <option value="Unknown">Unknown</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
 
         <button class="btn" type="submit">
-          Evaluate & Save Donation →
+          Evaluate &amp; Save Donation →
         </button>
 
-        <p class="form-disclaimer">
-          Hackathon demonstration only.
-          Use fictional company information.
-          Submitting does not guarantee acceptance.
+        <p class="helper">
+          Hackathon prototype. Use fictional business
+          information only. Actual devices require staff
+          inspection and appropriate data handling.
         </p>
+
       </form>
 
-      <!-- JAVASCRIPT DISPLAYS EVALUATION HERE -->
+      <!-- EVALUATION RESULTS -->
       <div
         id="result"
         class="card evaluation-result hidden"
+        role="status"
         aria-live="polite"
       ></div>
+
     </div>
 
-    <!-- RIGHT: MISSION AND PHOTOGRAPHY -->
+    <!-- RIGHT COLUMN -->
     <aside class="donation-sidebar">
 
       <img
-        src="/static/images/donation-laptops.jpg"
-        alt="Stack of laptops ready for potential reuse"
         class="donation-sidebar-image"
+        src="/static/images/donation-laptops.jpg"
+        alt="Stack of laptops available for technology reuse"
       >
 
       <div class="donation-sidebar-content">
@@ -129,42 +284,40 @@
         </span>
 
         <h2>
-          Your unused technology
-          could create new opportunities.
+          Give technology a second life.
         </h2>
 
         <p>
-          Free Geek Toronto promotes affordable
-          technology access and responsible
-          electronics reuse.
-        </p>
-
-        <p>
-          ReLoop helps assess incoming donation
-          opportunities so limited resources
-          can be used more effectively.
+          ReLoop helps organize technology donation
+          opportunities, identify missing information,
+          and support responsible refurbishment decisions.
         </p>
 
         <div class="sidebar-note">
+
           <h3>What happens next?</h3>
 
           <ol>
-            <li>Enter your device information.</li>
-            <li>Review illustrative estimates.</li>
-            <li>Free Geek staff assess suitability.</li>
+            <li>Submit your device information.</li>
+            <li>Receive a preliminary evaluation.</li>
+            <li>Staff verify details and make a decision.</li>
           </ol>
 
           <p>
-            Final decisions require human review.
+            Submission does not guarantee acceptance.
           </p>
+
         </div>
 
       </div>
+
     </aside>
+
   </main>
 
   <footer>
     ReLoop Intelligence · FUSE Blueprint 2026
+
     <p>
       Independent hackathon prototype.
       Not an official Free Geek Toronto service.
