@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>Donate | ReLoop Intelligence</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+
+<body>
+  <nav>
+    <a class="logo" href="/app">↻ ReLoop</a>
+    <div class="nav-links">
+      <a href="/app">Home</a>
+      <a href="/donate" aria-current="page">Donate</a>
+      <a href="/dashboard">Dashboard</a>
+    </div>
+  </nav>
+
+  <main class="container donation-layout">
+
+    <!-- LEFT: EXISTING FUNCTIONAL FORM -->
+    <div class="donation-main">
+
+      <span class="eyebrow">BUSINESS DONATIONS</span>
+
+      <h1>Submit a donation</h1>
+
+      <p class="donation-intro">
+        Tell us about the devices you'd like to offer.
+        ReLoop helps assess their potential for reuse.
+      </p>
+
+      <form id="donation-form" class="card form">
+
+        <label for="company">Company name</label>
+        <input
+          id="company"
+          type="text"
+          placeholder="Example: TechCorp"
+          maxlength="100"
+          required
+        >
+
+        <label for="device">Device type</label>
+        <select id="device" required>
+          <option value="Laptop">Laptop</option>
+          <option value="Desktop">Desktop</option>
+        </select>
+
+        <label for="quantity">Number of devices</label>
+        <input
+          id="quantity"
+          type="number"
+          min="1"
+          max="10000"
+          value="20"
+          required
+        >
+
+        <label for="condition">Reported condition</label>
+        <select id="condition" required>
+          <option value="Good">Good — mostly functional</option>
+          <option value="Fair">Fair — some repairs may be needed</option>
+          <option value="Poor">Poor — significant issues</option>
+        </select>
+
+        <label class="check">
+          <input
+            id="uniform"
+            type="checkbox"
+            checked
+          >
+          Devices are the same or similar models
+        </label>
+
+        <label for="pickup">
+          Estimated collection expense (CAD)
+        </label>
+        <input
+          id="pickup"
+          type="number"
+          min="0"
+          step="0.01"
+          value="100"
+          required
+        >
+
+        <p class="form-helper">
+          This expense is a demo assumption, not an
+          official pickup quote or donor fee.
+        </p>
+
+        <button class="btn" type="submit">
+          Evaluate & Save Donation →
+        </button>
+
+        <p class="form-disclaimer">
+          Hackathon demonstration only.
+          Use fictional company information.
+          Submitting does not guarantee acceptance.
+        </p>
+      </form>
+
+      <!-- JAVASCRIPT DISPLAYS EVALUATION HERE -->
+      <div
+        id="result"
+        class="card evaluation-result hidden"
+        aria-live="polite"
+      ></div>
+    </div>
+
+    <!-- RIGHT: MISSION AND PHOTOGRAPHY -->
+    <aside class="donation-sidebar">
+
+      <img
+        src="/static/images/donation-laptops.jpg"
+        alt="Stack of laptops ready for potential reuse"
+        class="donation-sidebar-image"
+      >
+
+      <div class="donation-sidebar-content">
+
+        <span class="eyebrow">
+          TECHNOLOGY WITH PURPOSE
+        </span>
+
+        <h2>
+          Your unused technology
+          could create new opportunities.
+        </h2>
+
+        <p>
+          Free Geek Toronto promotes affordable
+          technology access and responsible
+          electronics reuse.
+        </p>
+
+        <p>
+          ReLoop helps assess incoming donation
+          opportunities so limited resources
+          can be used more effectively.
+        </p>
+
+        <div class="sidebar-note">
+          <h3>What happens next?</h3>
+
+          <ol>
+            <li>Enter your device information.</li>
+            <li>Review illustrative estimates.</li>
+            <li>Free Geek staff assess suitability.</li>
+          </ol>
+
+          <p>
+            Final decisions require human review.
+          </p>
+        </div>
+
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    ReLoop Intelligence · FUSE Blueprint 2026
+    <p>
+      Independent hackathon prototype.
+      Not an official Free Geek Toronto service.
+    </p>
+  </footer>
+
+</body>
+</html>

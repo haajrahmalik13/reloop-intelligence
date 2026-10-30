@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | ReLoop</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+
+<body>
+  <nav>
+    <a class="logo" href="/app">↻ ReLoop</a>
+    <div>
+      <a href="/app">Home</a>
+      <a href="/donate">Donate</a>
+      <a href="/dashboard">Dashboard</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <span class="eyebrow">STAFF VIEW · DEMO</span>
+
+    <h1>Donation Dashboard</h1>
+
+    <p>
+      Review donation opportunities and make
+      informed decisions.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <p>Total donations</p>
+        <h2 id="total">0</h2>
+      </div>
+
+      <div class="card">
+        <p>Pending review</p>
+        <h2 id="pending">0</h2>
+      </div>
+
+      <div class="card">
+        <p>Accepted</p>
+        <h2 id="accepted">0</h2>
+      </div>
+    </div>
+
+    <h2>Donation opportunities</h2>
+
+    <p id="dashboard-message" aria-live="polite"></p>
+
+    <div id="donations-list"></div>
+  </main>
+
+  <footer>
+    Demo dashboard — no authentication.
+    Do not enter real donor information.
+  </footer>
+</body>
+</html>
